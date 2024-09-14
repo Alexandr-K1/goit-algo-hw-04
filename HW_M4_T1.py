@@ -5,9 +5,9 @@ def total_salary(path):
     try:
         with open(path, 'r', encoding='utf-8') as file:
             for line in file:
-                salary.append(line.split(",")[1])
-            total = sum(int(salary))
-            avarage = total / len(salary)
+                salary.append(int(line.split(",")[1]))
+            total = sum(salary)
+            avarage = int(total / len(salary))
     except FileNotFoundError:
         return "File not found Error!" 
     except OSError:
